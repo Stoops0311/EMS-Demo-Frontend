@@ -10,6 +10,7 @@ import {
   FeaturesSection,
   TechnicalExcellence,
   DeploymentOptions,
+  ComingSoonFeatures,
   FinalCTA,
   LandingFooter,
 } from "@/components/landing"
@@ -33,6 +34,7 @@ export default function EMSLandingPage() {
         <FeaturesSection />
         <TechnicalExcellence />
         <DeploymentOptions />
+        <ComingSoonFeatures />
         <FinalCTA />
         <LandingFooter />
       </div>
