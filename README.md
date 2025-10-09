@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EMS - Event Management System
 
-## Getting Started
+A modern event management system built for embassies and diplomatic missions, developed by Vivid Verse Global.
 
-First, run the development server:
+## 🌟 Features
+
+- **Multi-Role Access Control** - Separate interfaces for attendees, administrators, and security personnel
+- **Flexible Event Access Levels** - OPEN, APPROVAL, and PRIVATE event types
+- **Contactless QR Check-In** - Secure QR code generation and mobile scanning
+- **Streamlined Approval Workflows** - Efficient application review with bulk actions
+- **Dynamic Form Builder** - Custom registration forms without code
+- **Real-Time Analytics** - Event insights and attendance tracking
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15.5.4 with App Router
+- **UI**: React 19 with Tailwind CSS v4
+- **Styling**: shadcn/ui components
+- **Theme**: next-themes with light/dark mode
+- **Animations**: @paper-design/shaders-react for gradient backgrounds
+- **Icons**: Lucide React
+- **Package Manager**: pnpm
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- pnpm 8+
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Clone the repository
+git clone https://github.com/Stoops0311/EMS-Demo-Frontend.git
+
+# Navigate to project directory
+cd EMS-Demo-Frontend
+
+# Install dependencies
+pnpm install
+
+# Run development server
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📝 Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Development server with Turbopack
+pnpm dev
 
-## Learn More
+# Production build
+pnpm build
 
-To learn more about Next.js, take a look at the following resources:
+# Start production server
+pnpm start
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Run linter
+pnpm lint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 Project Structure
 
-## Deploy on Vercel
+```
+ems-frontend/
+├── app/                    # Next.js App Router pages
+│   ├── layout.tsx         # Root layout with theme provider
+│   ├── page.tsx           # Homepage
+│   └── globals.css        # Global styles with Tailwind v4
+├── components/            # React components
+│   ├── ui/               # shadcn/ui components
+│   ├── landing/          # Landing page sections
+│   ├── header.tsx        # Site header
+│   ├── hero-content.tsx  # Hero section
+│   └── theme-toggle.tsx  # Theme switcher
+├── lib/                   # Utility functions
+│   └── utils.ts          # cn() helper
+└── public/               # Static assets
+    ├── logo.png          # Vivid Verse Global logo
+    └── assets/           # Feature images
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌈 Theme System
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The application uses a modern Tailwind CSS v4 setup with:
+- Inline theme configuration in `globals.css`
+- CSS variables for color tokens
+- OKLCH color space for better perceptual uniformity
+- next-themes for system preference detection
+- Dark mode via class-based strategy
+
+## 🔒 Self-Hosted Solution
+
+EMS is designed for data sovereignty:
+- Self-hosted infrastructure
+- No data leaves your control
+- Complete audit trails
+- Diplomatic-grade security
+
+## 📄 License
+
+© 2025 Vivid Verse Global. All rights reserved.
+
+## 📧 Contact
+
+For inquiries: [nuaym@vividverseglobal.com](mailto:nuaym@vividverseglobal.com)
+
+## 🔗 Links
+
+- [Live Demo](https://ems-demo.vividverseglobal.com/)
+- [Vivid Verse Global](https://vividverseglobal.com/)
+
+---
+
+Built with ❤️ by Vivid Verse Global

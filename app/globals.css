@@ -1,26 +1,159 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Vivid Verse Global Brand Colors */
+
+  /* Primary - Vivid Blue #6592cc */
+  --vivid-blue: #6592cc;
+  --vivid-blue-dark: #4a64b1;
+  --vivid-blue-hover: #4a64b1;
+  --vivid-blue-light: #87afdf;
+
+  /* Accent - Vivid Pink #b21880 */
+  --vivid-pink: #b21880;
+  --vivid-pink-dark: #7d2379;
+  --vivid-pink-hover: #cd449a;
+  --vivid-pink-light: #ed75bd;
+
+  /* Warm - Vivid Orange #f3b865 */
+  --vivid-orange: #f3b865;
+  --vivid-orange-dark: #d98c48;
+  --vivid-orange-hover: #f7c76f;
+  --vivid-orange-light: #fbe3b7;
+
+  /* Light Mode Base */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111827; /* text-gray-900 */
+  --card: #ffffff;
+  --card-foreground: #111827;
+  --popover: #ffffff;
+  --popover-foreground: #111827;
+  --primary: #3d52a0; /* Strong saturated blue for light mode */
+  --primary-foreground: #ffffff;
+  --secondary: #f3b865; /* Vivid Orange */
+  --secondary-foreground: #111827;
+  --muted: #f3f4f6;
+  --muted-foreground: #4b5563; /* text-gray-600 */
+  --accent: #b21880; /* Vivid Pink */
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #3d52a0;
+  --chart-1: #3d52a0;
+  --chart-2: #b21880;
+  --chart-3: #f3b865;
+  --chart-4: #87afdf;
+  --chart-5: #ed75bd;
+  --radius: 0.5rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #3d52a0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f3f4f6;
+  --sidebar-accent-foreground: #111827;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #3d52a0;
+  --font-instrument-serif: "Instrument Serif", serif;
+  --font-figtree: "Figtree", sans-serif;
+}
+
+.dark {
+  /* Dark Mode - Deep purple/blue base with colored glows */
+  --background: #0f0a1e; /* Deep purple/blue base */
+  --foreground: #f1f5f9; /* text-slate-100 */
+  --card: #1d1432;
+  --card-foreground: #f1f5f9;
+  --popover: #1d1432;
+  --popover-foreground: #f1f5f9;
+  --primary: #87afdf; /* Vivid Blue Light */
+  --primary-foreground: #0f0a1e;
+  --secondary: #fbe3b7; /* Vivid Orange Light */
+  --secondary-foreground: #0f0a1e;
+  --muted: #2c3b6a;
+  --muted-foreground: #94a3b8; /* text-slate-400 */
+  --accent: #ed75bd; /* Vivid Pink Light */
+  --accent-foreground: #0f0a1e;
+  --destructive: #ef4444;
+  --destructive-foreground: #f1f5f9;
+  --border: #2c3b6a;
+  --input: #1d1432;
+  --ring: #87afdf;
+  --chart-1: #87afdf;
+  --chart-2: #ed75bd;
+  --chart-3: #fbe3b7;
+  --chart-4: #6592cc;
+  --chart-5: #cd449a;
+  --sidebar: #1d1432;
+  --sidebar-foreground: #f1f5f9;
+  --sidebar-primary: #87afdf;
+  --sidebar-primary-foreground: #0f0a1e;
+  --sidebar-accent: #2c3b6a;
+  --sidebar-accent-foreground: #f1f5f9;
+  --sidebar-border: #2c3b6a;
+  --sidebar-ring: #87afdf;
+  --font-instrument-serif: "Instrument Serif", serif;
+  --font-figtree: "Figtree", sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-instrument-serif: var(--font-instrument-serif);
+  /* Added Figtree font to theme configuration */
+  --font-sans: var(--font-figtree);
+  --font-figtree: var(--font-figtree);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Set Figtree as the default font family for the entire website */
+    font-family: var(--font-figtree);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.instrument {
+  font-family: var(--font-instrument-serif);
 }

@@ -1,0 +1,8 @@
+export { SocialProofBand } from "./social-proof-band"
+export { SelfHostingBenefits } from "./self-hosting-benefits"
+export { FeatureSpotlight } from "./feature-spotlight"
+export { FeaturesSection } from "./features-section"
+export { TechnicalExcellence } from "./technical-excellence"
+export { DeploymentOptions } from "./deployment-options"
+export { FinalCTA } from "./final-cta"
+export { LandingFooter } from "./landing-footer"
