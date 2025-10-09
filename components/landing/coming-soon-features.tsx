@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Fingerprint, MessageSquare } from "lucide-react"
+import { Fingerprint, MessageSquare, Globe } from "lucide-react"
 
 export function ComingSoonFeatures() {
   return (
@@ -18,7 +18,7 @@ export function ComingSoonFeatures() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {/* Biometrics Feature */}
           <Card variant="default" className="hover:shadow-lg transition-shadow relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16" />
@@ -61,6 +61,29 @@ export function ComingSoonFeatures() {
                 <li>• Role-based chat channels</li>
                 <li>• Real-time event coordination</li>
                 <li>• File sharing and attachments</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          {/* Language Support Feature */}
+          <Card variant="default" className="hover:shadow-lg transition-shadow relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16" />
+            <CardHeader>
+              <div className="mb-4 p-3 rounded-lg bg-primary/10 w-fit">
+                <Globe className="size-6 text-primary" />
+              </div>
+              <CardTitle className="text-2xl">All Language Support</CardTitle>
+              <Badge variant="outline" className="w-fit">In Development</Badge>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-foreground/80 leading-relaxed">
+                Make your app completely international by supporting any language. Provide seamless experiences for diplomatic staff and guests from around the world with automatic translation and localization.
+              </CardDescription>
+              <ul className="mt-4 space-y-2 text-sm text-foreground/70">
+                <li>• Multi-language interface support</li>
+                <li>• Automatic content translation</li>
+                <li>• Right-to-left (RTL) language support</li>
+                <li>• Localized date, time, and number formats</li>
               </ul>
             </CardContent>
           </Card>

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
 import { Mail } from "lucide-react"
 
@@ -8,7 +9,10 @@ export function LandingFooter() {
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           {/* Company Description */}
           <div className="space-y-3">
-            <h3 className="font-semibold text-lg instrument">Vivid Verse Global</h3>
+            <div className="flex items-center gap-3">
+              <Image src="/logo.png" alt="Vivid Verse Global" width={48} height={48} className="size-12" />
+              <h3 className="font-semibold text-lg instrument">Vivid Verse Global</h3>
+            </div>
             <p className="text-sm text-muted-foreground max-w-md">
               Building secure, self-hostable software for diplomatic missions and government organizations worldwide.
             </p>
