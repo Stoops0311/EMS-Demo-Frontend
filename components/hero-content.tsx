@@ -28,8 +28,7 @@ export default function HeroContent() {
 
         {/* Description */}
         <p className="text-base md:text-lg font-light text-foreground/80 dark:text-foreground/80 mb-6 leading-relaxed max-w-xl">
-          Event management built for embassies and diplomatic missions. Self-hosted infrastructure means your sensitive
-          data never leaves your control.
+          Built for embassies and diplomatic missions. Self-hosted infrastructure means your sensitive data never leaves your control. Your one stop shop.
         </p>
 
         {/* Buttons */}
