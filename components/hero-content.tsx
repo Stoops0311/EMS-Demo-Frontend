@@ -15,7 +15,7 @@ export default function HeroContent() {
         >
           <div className="absolute top-0 left-1 right-1 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent rounded-full" />
           <span className="text-foreground/90 dark:text-foreground/90 text-xs font-light relative z-10">
-            Event Management System for Embassies
+            Embassy Management System
           </span>
         </div>
 
@@ -41,7 +41,7 @@ export default function HeroContent() {
           </Button>
           <p className="text-xs font-light text-muted-foreground dark:text-muted-foreground">
             Questions?{" "}
-            <Link href="mailto:nuaym@vividverseglobal.com" className="text-primary hover:underline">
+            <Link href="mailto:info@vividverseglobal.com" className="text-primary hover:underline">
               Contact us
             </Link>
           </p>

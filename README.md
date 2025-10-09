@@ -106,7 +106,7 @@ EMS is designed for data sovereignty:
 
 ## 📧 Contact
 
-For inquiries: [nuaym@vividverseglobal.com](mailto:nuaym@vividverseglobal.com)
+For inquiries: [info@vividverseglobal.com](mailto:info@vividverseglobal.com)
 
 ## 🔗 Links
 

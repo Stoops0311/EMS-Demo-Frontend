@@ -9,7 +9,7 @@ export function FeaturesSection() {
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20">
           <h2 className="text-3xl md:text-4xl font-semibold mb-4 instrument">
-            Everything You Need to Manage Diplomatic Events
+            Everything You Need to Manage Diplomatic Missions
           </h2>
         </div>
 

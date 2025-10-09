@@ -24,7 +24,7 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: "EMS - Vivid Verse Global",
-  description: "Event Management System for Embassies and Diplomatic Missions. Self-hosted infrastructure means your sensitive data never leaves your control.",
+  description: "Embassy Management System for Embassies and Diplomatic Missions. Self-hosted infrastructure means your sensitive data never leaves your control.",
   icons: {
     icon: "/logo.png",
   },

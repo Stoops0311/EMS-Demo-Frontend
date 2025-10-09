@@ -18,11 +18,11 @@ export function LandingFooter() {
           <div className="space-y-3">
             <h3 className="font-semibold text-lg">Get in Touch</h3>
             <a
-              href="mailto:nuaym@vividverseglobal.com"
+              href="mailto:info@vividverseglobal.com"
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-fit"
             >
               <Mail className="size-4" />
-              nuaym@vividverseglobal.com
+              info@vividverseglobal.com
             </a>
           </div>
         </div>
@@ -32,7 +32,7 @@ export function LandingFooter() {
         {/* Copyright */}
         <div className="text-center">
           <p className="text-sm text-muted-foreground">
-            © 2025 Vivid Verse Global Limited. All rights reserved.
+            © 2023-2025 Vivid Verse Global Limited. All rights reserved.
           </p>
         </div>
       </div>

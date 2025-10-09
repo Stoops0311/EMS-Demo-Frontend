@@ -30,7 +30,7 @@ export function FinalCTA() {
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="mailto:nuaym@vividverseglobal.com">
+              <a href="mailto:info@vividverseglobal.com">
                 Contact Us
               </a>
             </Button>
