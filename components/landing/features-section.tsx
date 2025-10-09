@@ -1,5 +1,5 @@
 import { FeatureSpotlight } from "./feature-spotlight"
-import { Users, Calendar, QrCode, CheckCircle, LayoutDashboard, TrendingUp } from "lucide-react"
+import { Users, Calendar, QrCode, CheckCircle, LayoutDashboard, TrendingUp, CalendarClock } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 
 export function FeaturesSection() {
@@ -69,7 +69,25 @@ export function FeaturesSection() {
 
           <Separator className="my-16" />
 
-          {/* Feature 4: Approval Workflows */}
+          {/* Feature 4: Appointment Management */}
+          <FeatureSpotlight
+            icon={<CalendarClock className="size-6 text-primary" />}
+            title="Comprehensive Appointment System"
+            description="Streamline appointment scheduling with three distinct appointment types tailored for diplomatic operations. Users submit appointment requests through custom forms, administrators review and approve appointments, and private appointments can be created directly for VIP guests and diplomatic personnel."
+            capabilities={[
+              "Form-based appointment applications with custom data collection",
+              "Admin review and approval workflow for standard appointments",
+              "Private appointment creation for VIP and diplomatic personnel",
+              "Calendar integration with availability management",
+            ]}
+            imagePosition="right"
+            imageSrc="/assets/appointments/calendar.jpg"
+            imageAlt="Calendar pages showing appointment scheduling and time management"
+          />
+
+          <Separator className="my-16" />
+
+          {/* Feature 5: Approval Workflows */}
           <FeatureSpotlight
             icon={<CheckCircle className="size-6 text-primary" />}
             title="Streamlined Application Review"
@@ -87,7 +105,7 @@ export function FeaturesSection() {
 
           <Separator className="my-16" />
 
-          {/* Feature 5: Dynamic Form Builder */}
+          {/* Feature 6: Dynamic Form Builder */}
           <FeatureSpotlight
             icon={<LayoutDashboard className="size-6 text-primary" />}
             title="Custom Data Collection Forms"
@@ -105,7 +123,7 @@ export function FeaturesSection() {
 
           <Separator className="my-16" />
 
-          {/* Feature 6: Real-Time Analytics */}
+          {/* Feature 7: Real-Time Analytics */}
           <FeatureSpotlight
             icon={<TrendingUp className="size-6 text-primary" />}
             title="Event Insights & Attendance Tracking"
