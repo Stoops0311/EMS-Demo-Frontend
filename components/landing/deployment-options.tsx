@@ -101,7 +101,7 @@ export function DeploymentOptions() {
         {/* Flexibility Message */}
         <div className="text-center max-w-3xl mx-auto">
           <p className="text-foreground/80 leading-relaxed">
-            <strong className="text-foreground">Not sure which option is right?</strong> We'll help you evaluate your requirements and choose the deployment model that meets your security, compliance, and operational needs. Contact us to discuss your specific situation.
+            <strong className="text-foreground">Not sure which option is right?</strong> We&apos;ll help you evaluate your requirements and choose the deployment model that meets your security, compliance, and operational needs. Contact us to discuss your specific situation.
           </p>
         </div>
       </div>

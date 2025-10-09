@@ -39,7 +39,7 @@ export function SelfHostingBenefits() {
             </CardHeader>
             <CardContent>
               <CardDescription className="text-foreground/80">
-                Satisfy your country's data protection laws and diplomatic security requirements. Full audit trails and access controls built for government accountability.
+                Satisfy your country&apos;s data protection laws and diplomatic security requirements. Full audit trails and access controls built for government accountability.
               </CardDescription>
             </CardContent>
           </Card>
