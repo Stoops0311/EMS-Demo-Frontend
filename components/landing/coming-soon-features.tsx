@@ -9,7 +9,7 @@ export function ComingSoonFeatures() {
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <Badge variant="glass" className="mb-4">Coming Soon</Badge>
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4 instrument">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4 instrument textured-heading">
             Future Enhancements
           </h2>
           <p className="text-foreground/80 max-w-2xl mx-auto">

@@ -157,3 +157,24 @@
 .instrument {
   font-family: var(--font-instrument-serif);
 }
+
+/* Textured heading effect using background-clip - retro Apple aesthetic */
+.textured-heading {
+  position: relative;
+  background-image:
+    linear-gradient(to right, #000000, #000000),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-size: 100%, 150px 150px;
+  background-blend-mode: multiply;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: contrast(1.1) brightness(1.05);
+}
+
+/* Dark mode - white text with grain texture */
+.dark .textured-heading {
+  background-image:
+    linear-gradient(to right, #ffffff, #ffffff),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}

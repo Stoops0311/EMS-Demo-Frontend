@@ -54,7 +54,7 @@ export function FeatureSpotlight({
           <div className="p-3 rounded-lg bg-primary/10 w-fit">
             {icon}
           </div>
-          <h3 className="text-2xl md:text-3xl font-semibold instrument">{title}</h3>
+          <h3 className="text-2xl md:text-3xl font-semibold instrument textured-heading">{title}</h3>
           <p className="text-foreground/80 text-base leading-relaxed">
             {description}
           </p>

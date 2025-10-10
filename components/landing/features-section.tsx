@@ -8,7 +8,7 @@ export function FeaturesSection() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4 instrument">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4 instrument textured-heading">
             Everything You Need to Manage Diplomatic Missions
           </h2>
         </div>

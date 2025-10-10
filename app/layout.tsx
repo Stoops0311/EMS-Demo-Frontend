@@ -6,6 +6,7 @@ import { Instrument_Serif } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/theme-toggle"
+import GrainOverlay from "@/components/grain-overlay"
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -54,6 +55,7 @@ html {
           enableSystem
           disableTransitionOnChange
         >
+          <GrainOverlay />
           {children}
           <ThemeToggle />
         </ThemeProvider>
