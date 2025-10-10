@@ -12,7 +12,7 @@ interface ShaderBackgroundProps {
 
 export default function ShaderBackground({ children }: ShaderBackgroundProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const overlayRef = useRef<HTMLDivElement>(null)
+  const gradientContainerRef = useRef<HTMLDivElement>(null)
   const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const rafId = useRef<number | null>(null)
@@ -21,7 +21,7 @@ export default function ShaderBackground({ children }: ShaderBackgroundProps) {
     setMounted(true)
   }, [])
 
-  // Track scroll progress for opacity overlay - optimized with RAF
+  // Track scroll progress to fade gradient opacity - optimized with RAF
   useEffect(() => {
     const handleScroll = () => {
       // Cancel previous animation frame if it exists
@@ -31,14 +31,14 @@ export default function ShaderBackground({ children }: ShaderBackgroundProps) {
 
       // Use requestAnimationFrame for smooth 60fps updates
       rafId.current = requestAnimationFrame(() => {
-        if (overlayRef.current) {
+        if (gradientContainerRef.current) {
           const heroHeight = window.innerHeight * 0.8 // Hero is now 80vh
           const scrolled = window.scrollY
-          // Calculate progress: 0 at top, 0.95 at heroHeight
-          const progress = Math.min(scrolled / heroHeight, 0.95)
+          // Calculate progress: 1 at top, fades to 0.35 (35%) at heroHeight
+          const progress = Math.max(1 - (scrolled / heroHeight) * 0.65, 0.35)
 
-          // Directly update opacity via DOM instead of React state (better performance)
-          overlayRef.current.style.opacity = progress.toString()
+          // Directly update opacity of the gradient itself (better performance)
+          gradientContainerRef.current.style.opacity = progress.toString()
         }
       })
     }
@@ -95,29 +95,24 @@ export default function ShaderBackground({ children }: ShaderBackgroundProps) {
         </defs>
       </svg>
 
-      {/* Fixed Background Shaders with Vivid Verse Brand Colors */}
+      {/* Fixed Background Shaders with Vivid Verse Brand Colors - fades on scroll */}
       {mounted && (
-        <>
-          <div className="fixed inset-0 w-full h-full pointer-events-none" style={{ transform: "translateZ(0)", willChange: "transform" }}>
-            <MeshGradient
-              className="absolute inset-0 w-full h-full"
-              colors={isDark ? darkColors1 : lightColors1}
-              speed={0.3}
-            />
-            <MeshGradient
-              className="absolute inset-0 w-full h-full opacity-40"
-              colors={isDark ? darkColors2 : lightColors2}
-              speed={0.2}
-            />
-          </div>
-
-          {/* Scroll-based opacity overlay - fades gradient to background color */}
-          <div
-            ref={overlayRef}
-            className="fixed inset-0 w-full h-full bg-background dark:bg-[#0f0a1e] pointer-events-none"
-            style={{ opacity: 0, willChange: "opacity" }}
+        <div
+          ref={gradientContainerRef}
+          className="fixed inset-0 w-full h-full pointer-events-none"
+          style={{ transform: "translateZ(0)", willChange: "opacity", opacity: 1 }}
+        >
+          <MeshGradient
+            className="absolute inset-0 w-full h-full"
+            colors={isDark ? darkColors1 : lightColors1}
+            speed={0.5}
           />
-        </>
+          <MeshGradient
+            className="absolute inset-0 w-full h-full opacity-40"
+            colors={isDark ? darkColors2 : lightColors2}
+            speed={0.35}
+          />
+        </div>
       )}
 
       {/* Content scrolls normally */}
