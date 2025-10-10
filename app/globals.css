@@ -41,8 +41,8 @@
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #e5e7eb;
-  --input: #e5e7eb;
+  --border: #9ca3af;
+  --input: #9ca3af;
   --ring: #3d52a0;
   --chart-1: #3d52a0;
   --chart-2: #b21880;
@@ -56,7 +56,7 @@
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f3f4f6;
   --sidebar-accent-foreground: #111827;
-  --sidebar-border: #e5e7eb;
+  --sidebar-border: #9ca3af;
   --sidebar-ring: #3d52a0;
   --font-instrument-serif: "Instrument Serif", serif;
   --font-figtree: "Figtree", sans-serif;
