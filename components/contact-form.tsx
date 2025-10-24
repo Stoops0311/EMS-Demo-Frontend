@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Mail, User, MessageSquare, Send } from "lucide-react"
+import { Mail, User, MessageSquare, Send, AlertCircle } from "lucide-react"
 import {
   Dialog,
   DialogContent,
@@ -24,6 +24,7 @@ export default function ContactForm({ children, trigger }: ContactFormProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -34,19 +35,48 @@ export default function ContactForm({ children, trigger }: ContactFormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          from_name: "EMS Contact Form",
+          // Optional: redirect to a thank you page after successful submission
+          // redirect: "https://yourdomain.com/thank-you"
+        }),
+      })
 
-    setIsSuccess(true)
-    setIsSubmitting(false)
+      const data = await response.json()
 
-    // Reset form after 2 seconds and close dialog
-    setTimeout(() => {
-      setFormData({ name: "", email: "", subject: "", message: "" })
-      setIsSuccess(false)
-      setIsOpen(false)
-    }, 2000)
+      if (data.success) {
+        setIsSuccess(true)
+        setIsSubmitting(false)
+
+        // Reset form after 2 seconds and close dialog
+        setTimeout(() => {
+          setFormData({ name: "", email: "", subject: "", message: "" })
+          setIsSuccess(false)
+          setIsOpen(false)
+        }, 2500)
+      } else {
+        throw new Error(data.message || "Failed to send message")
+      }
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : "Failed to send message. Please try again."
+      )
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (
@@ -90,6 +120,13 @@ export default function ContactForm({ children, trigger }: ContactFormProps) {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
+            {error && (
+              <div className="flex items-center gap-2 p-3 rounded-md bg-destructive/10 border border-destructive/20 text-destructive text-sm">
+                <AlertCircle className="size-4 shrink-0" />
+                <p>{error}</p>
+              </div>
+            )}
+
             <div className="space-y-2">
               <Label htmlFor="name" className="flex items-center gap-2">
                 <User className="size-4" />
