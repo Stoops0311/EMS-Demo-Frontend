@@ -10,6 +10,7 @@ import {
   FeaturesSection,
   TechnicalExcellence,
   DeploymentOptions,
+  PricingSection,
   ComingSoonFeatures,
   FinalCTA,
   LandingFooter,
@@ -34,6 +35,7 @@ export default function EMSLandingPage() {
         <FeaturesSection />
         <TechnicalExcellence />
         <DeploymentOptions />
+        <PricingSection />
         <ComingSoonFeatures />
         <FinalCTA />
         <LandingFooter />
