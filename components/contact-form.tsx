@@ -103,7 +103,7 @@ export default function ContactForm({ children, trigger }: ContactFormProps) {
             Get in Touch
           </DialogTitle>
           <DialogDescription>
-            Fill out the form below and we'll get back to you as soon as
+            Fill out the form below and we&apos;ll get back to you as soon as
             possible.
           </DialogDescription>
         </DialogHeader>
@@ -115,7 +115,7 @@ export default function ContactForm({ children, trigger }: ContactFormProps) {
             </div>
             <h3 className="text-xl font-semibold mb-2">Message Sent!</h3>
             <p className="text-muted-foreground">
-              Thank you for contacting us. We'll be in touch soon.
+              Thank you for contacting us. We&apos;ll be in touch soon.
             </p>
           </div>
         ) : (
